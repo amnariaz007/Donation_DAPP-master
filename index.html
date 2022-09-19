@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations Project</title>
+
+    <!-- LINKING EXTERNAL CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <!-- LINKING EXTERNAL SCRIPT -->
+    <script src="Js/script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+    <section id="main" class="mainContainer">
+        <header class="head">
+            <!-- <div class="headerContainer">
+                <div class="number">
+                    <ion-icon name="call-outline"></ion-icon><span> +91 8425796504</span>
+                    <ion-icon name="mail-outline"></ion-icon><span> info@donationsproject.com</span>
+                </div>
+                <div class="social">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </div>
+            </div> -->
+            <nav id="navbar" class="mainNavbar">
+                <div class="title"><h1>LOGO</h1></div>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#donations">Donate</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li><a onclick="connect()" id="btnn"  class="connect" href="#">Connect</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="welcome">
+            <div class="wl-heading">
+                <h1 class="Title">Welcome to<br>Donations Project</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod officiis vitae laborum deleniti? Saepe, inventore amet. Incidunt laudantium dolorem inventore ex iste totam voluptatibus saepe in ratione, dicta placeat aspernatur!</p>
+                <div class="wl-btns">
+                    <a href="about.html">Know More</a>
+                    <a href="donate.html">Donate Now</a>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="about">
+        <div class="aboutTitle">
+            <h1 class="aTitle">About Us</h1>
+        </div>
+        <div class="aboutContent">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium natus possimus eveniet, beatae sapiente saepe impedit veniam deserunt, dolorem consequuntur illo ad alias maxime fugiat. Aliquam quaerat animi repellat corporis! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus at atque temporibus voluptatum optio ratione possimus, tempora tempore corporis veniam quaerat explicabo dicta iure. Corrupti quos voluptates magni nobis quod?</p>
+            <br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, excepturi reiciendis dolorum minima harum ab deserunt a esse doloremque laboriosam, explicabo expedita maiores non natus ipsam laborum nulla, placeat modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptates ad ipsa porro ut culpa quidem aperiam id tempore saepe labore necessitatibus, ipsam fuga veritatis vitae sunt quis atque? Sapiente?</p>
+        </div>
+    </section>
+
+    <!-- DONATIONS SECTION -->
+    <section id="donations" class="donationsContainer">
+        <div class="wrapper">
+            <h1 class="donationsTitle">Donate to Us</h1>
+            <div class="cols">
+                <div id="box1" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div id="b1-container" class="container">
+                        <div id="b1-front" class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url('images/artsnculture.jpg');">
+                            <div class="inner">
+                                <p>Arts n Culture</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div id="b1-back" class="back">
+                            <div id="b1-inner" class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box2" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/education.jpg)">
+                            <div class="inner">
+                                <p>Education</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box3" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/environment.jpg)">
+                            <div class="inner">
+                                <p>Environment</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box4" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/animalcare.jpg)">
+                            <div class="inner">
+                                <p>Animal Care</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box5" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/disaster.jpg)">
+                            <div class="inner">
+                                <p>Disaster Relief</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box6" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/health.jpg)">
+                            <div class="inner">
+                                <p>Health & Medical</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box7" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/army.jpg)">
+                            <div class="inner">
+                                <p>Army</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box8" class="col" onclick="clicked(this)" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front" style="background-image: linear-gradient(132deg, rgba(251, 165, 116,.4) 0.00%, rgba(216, 245, 251,.4) 100.00%), url(images/humanservices.jpg)">
+                            <div class="inner">
+                                <p>Human Services</p>
+                                <span>Donation</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section id="contact" class="contactus">
+        <div class="contactContainer">
+            <form id="contact" action="" method="post">
+              <h3>Contact Us</h3>
+              <h4>Contact us today, and get reply with in 24 hours!</h4>
+              <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" required>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+              </fieldset>
+              <fieldset>
+                <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+              </fieldset>
+            </form>
+           
+          </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <section id="footer">
+        <footer class="site-footer">
+            <div class="container">
+              <div class="footerRow">
+                <div class="footerAbout">
+                  <h6>About</h6>
+                  <p class="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis eaque, eligendi deserunt hic corporis velit earum temporibus similique. Sed a quasi alias pariatur voluptate ab doloremque cupiditate voluptas vero incidunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cupiditate eveniet velit voluptas id, suscipit iure praesentium provident culpa itaque tenetur. Vero blanditiis accusantium aliquid tempora id praesentium exercitationem ratione.</p>
+                </div>
+      
+                <div class="footerCategories">
+                  <h6>Categories</h6>
+                  <ul class="footer-links">
+                    <li><a href="pages/arts.html">Arts & Culture</a></li>
+                    <li><a href="pages/education.html">Education</a></li>
+                    <li><a href="pages/environment.html">Environment</a></li>
+                    <li><a href="pages/animals.html">Animals Care</a></li>
+                    <li><a href="pages/disaster.html">Disaster Relief</a></li>
+                    <li><a href="pages/health.html">Health & Medical</a></li>
+                    <li><a href="pages/army.html">Army</a></li>
+                    <li><a href="pages/humans.html">Human Services</a></li>
+                  </ul>
+                </div>
+      
+                <div class="footerLinks">
+                  <h6>Quick Links</h6>
+                  <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#donations">Donate Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                  </ul>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                  <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+               <a href="#">Donations Project</a>.
+                  </p>
+                </div>
+      
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>   
+                  </ul>
+                </div>
+              </div>
+            </div>
+      </footer>
+    </section>
+</body>
+</html>

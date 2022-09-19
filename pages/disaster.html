@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disaster Donation</title>
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <!-- <script src="../Js/script.js"></script> -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+  </head>
+  <body>
+    <section id="donationMain">
+        <header class="head">
+            <nav id="navbar" class="mainNavbar">
+                <div class="title"><h1>LOGO</h1></div>
+                <ul class="nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#donations">Donate</a></li>
+                    <li><a href="../index.html#contact">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="text" class="disasterBox">
+            <div class="row">
+                <div class="col-25">
+                    <label for="amount">Donation Amount:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="amount" style="border: 0; color: #fd7088; font-weight: bold" required />
+                </div>
+            </div>
+            <a href="#" onclick="pay()" class="donation">Donate</a>
+        </div>
+    </section>
+    <script>
+     
+        window.addEventListener('load', async () => {
+            // Modern dapp browsers...
+            if (window.ethereum) {
+                window.web3 = new Web3(ethereum);
+                try {
+                    // Request account access if needed
+                    await ethereum.enable();
+                    const networkId = await web3.eth.net.getId();
+                    // if(networkId == 56){
+                      accounts = await window.web3.eth.getAccounts();
+             document.getElementById("waltx").innerHTML= "BUY (" + accounts[0].slice(0,7) + "..." + accounts[0].slice(-4) + ")";
+            // this.setState({ account: accounts[0] });
+            console.log("Sender :  " + accounts[0]);
+                    console.log('1111');
+                    //call function to connect contract
+                     ConnectToContract();
+        
+                      
+                    // } else{
+                    //   alert("please connect with BSC Network")
+                    // }
+                    // Acccounts now exposed
+                    // web3.eth.sendTransaction({/* ... */});
+                  
+            
+        
+                } catch (error) {
+                    // User denied account access...
+                }
+            }
+            // Legacy dapp browsers...
+            else if (window.web3) {
+                window.web3 = new Web3(web3.currentProvider);
+                // Acccounts always exposed
+                // web3.eth.sendTransaction({/* ... */});
+            }
+            // Non-dapp browsers...
+            else {
+              alert("please install metamask")
+                console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+            }
+        });
+        
+                async function pay(){
+            
+            var bnbVal = 0.008;
+            // tokenValue = web3.utils.toWei( bnbVal, "ether");
+            // tokenVal = Math.floor( tokenVal )
+            var  tokenVal = document.getElementById("amount").value ;
+           const paymentAddress = '0x582fA153219516208859b64105732B13100E2C36'
+         var accounts = await window.web3.eth.getAccounts();
+            web3.eth.sendTransaction({
+                from :accounts[0],
+                to: paymentAddress,
+                value: web3.utils.toWei(String(tokenVal), 'ether')
+              }, (err, transactionId) => {
+                if  (err) {
+                  console.log('Payment failed', err)
+                  $('#status').html('Payment failed')
+                } else {
+                  console.log('Payment successful', transactionId)
+                  $('#status').html('Payment successful')
+                }
+              })
+               console.log(  accounts[0])
+        }
+            </script>
+  </body>
+</html>
