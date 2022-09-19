@@ -66,3 +66,4 @@ function clicked(x) {
         alert("Invalid Selection");
     }
 }
+//condition for all the images
